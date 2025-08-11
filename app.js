@@ -8,7 +8,7 @@ import dbClient from './config/dbClient.js'
 
 //creamos instancia de express
 const app = express();
-app.use(cors({ origin: 'http://localhost:3000' }));
+app.use(cors({ origin: 'http://localhost:5173' }));
 import swaggerUi from 'swagger-ui-express';
 import swaggerDocument from './swagger.json' with {type: 'json'};
 
