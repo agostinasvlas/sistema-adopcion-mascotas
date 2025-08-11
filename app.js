@@ -1,6 +1,6 @@
 import 'dotenv/config';
-import express from 'express';
 import cors from 'cors';
+import express from 'express';
 import routesMascotas from './routes/mascotas.js'
 import routesUsuarios from './routes/usuarios.js';
 import bodyParser from 'body-parser';
@@ -8,7 +8,8 @@ import dbClient from './config/dbClient.js'
 
 //creamos instancia de express
 const app = express();
-app.use(cors({ origin: 'http://localhost:5173' }));
+app.use(cors());
+
 import swaggerUi from 'swagger-ui-express';
 import swaggerDocument from './swagger.json' with {type: 'json'};
 
