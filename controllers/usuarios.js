@@ -35,7 +35,16 @@ class usuarioCtrl {
             return res.status(400).json({ error: "Clave incorrecta" });
         }
         const token = generarToken(email);
-        return res.status(200).json({ msg: "Usuario autenticado ", token});
+        return res.status(200).json(
+            { 
+                msg: "Usuario autenticado ",
+                token,
+                user: {
+                    id: existeUsuario._id,
+                    nombre: existeUsuario.nombre,
+                    email: existeUsuario.email
+                }
+            });
     }
 
     async profile(req, res) {
