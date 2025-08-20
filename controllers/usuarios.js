@@ -39,11 +39,7 @@ class usuarioCtrl {
             { 
                 msg: "Usuario autenticado ",
                 token,
-                user: {
-                    id: existeUsuario._id,
-                    nombre: existeUsuario.nombre,
-                    email: existeUsuario.email
-                }
+                existeUsuario
             });
     }
 
