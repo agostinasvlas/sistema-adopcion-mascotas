@@ -44,7 +44,7 @@ class mascotasCtrl {
 
     async getAll(req, res) {
         try {
-            const data = await mascotasModel.getAll({adoptado: false});
+            const data = await mascotasModel.getAll();
             res.status(200).json(data);
         } catch (e) {
             res.status(500).send(e);
