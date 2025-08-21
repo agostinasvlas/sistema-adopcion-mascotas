@@ -8,7 +8,7 @@ class mascotasModel {
         return await Mascota.create(mascota);
     }
     async getAll() {
-        return await Mascota.find();//puedo hacer un find con filtros
+        return await Mascota.find({adoptado: false});//puedo hacer un find con filtros
     }
     async getOne(id) {
         return await Mascota.findOne({_id:id});
