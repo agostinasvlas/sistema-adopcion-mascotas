@@ -29,12 +29,12 @@ class mascotasCtrl {
     }
 
     async update(req, res) {
-        const {sku,nombre,tipo,raza,edad,descripcion,adoptado} = req.body;
+        const {nombre,tipo,raza,edad,descripcion} = req.body;
         const imagen = `/uploads/mascotas/${sku}.png`;
         try {
             const { id } = req.params;
             //const data = await mascotasModel.update(id,req.body);
-            const data = await mascotasModel.update(id,{sku,nombre,tipo,raza,edad,descripcion,imagen,adoptado});
+            const data = await mascotasModel.update(id,{nombre,tipo,raza,edad,descripcion,imagen});
             res.status(200).json(data);
         } catch (e) {
             res.status(500).send(e);
