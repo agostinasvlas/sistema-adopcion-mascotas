@@ -6,12 +6,12 @@ class mascotasCtrl {
     }
     //metodo asincrono porq va a tener que esperar una respuesta
     async create(req, res) {
-        const {sku,nombre,tipo,raza,edad,descripcion,adoptado} = req.body;
+        const {sku,nombre,tipo,raza,edad,descripcion} = req.body;
         const imagen = `/uploads/mascotas/${sku}.png`;
         try {
             //es una promesa por eso pongo await
             //const data = await mascotasModel.create(req.body);
-            const data = await mascotasModel.create({sku,nombre,tipo,raza,edad,descripcion,imagen,adoptado}); //lo pasamos asi para que swagger los reconozca
+            const data = await mascotasModel.create({sku,nombre,tipo,raza,edad,descripcion,imagen}); //lo pasamos asi para que swagger los reconozca
             res.status(201).json(data);
         } catch (e) {
             res.status(500).send(e);
